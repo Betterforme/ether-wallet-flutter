@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'generated/l10n.dart';
 class IntroPage extends StatelessWidget {
   const IntroPage({Key? key}) : super(key: key);
 
@@ -12,7 +12,7 @@ class IntroPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              child: const Text('Create new wallet'),
+              child: Text(S.of(context).createNWallet),
               onPressed: () {
                 Navigator.of(context).pushNamed('/create');
               },

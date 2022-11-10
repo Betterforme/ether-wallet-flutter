@@ -1,12 +1,15 @@
 import 'package:etherwallet/components/wallet/balance.dart';
+import 'package:etherwallet/service/language_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:provider/provider.dart';
 
 import 'components/dialog/alert.dart';
 import 'components/menu/main_menu.dart';
 import 'components/wallet/change_network.dart';
 import 'context/wallet/wallet_provider.dart';
+import 'generated/l10n.dart';
 
 class WalletMainPage extends HookWidget {
   const WalletMainPage(this.title, {Key? key}) : super(key: key);
@@ -108,7 +111,19 @@ class WalletMainPage extends HookWidget {
               ethBalance: store.state.ethBalance,
               tokenBalance: store.state.tokenBalance,
               symbol: network.config.symbol,
-            )
+            ),
+            Consumer<LanguageService>(builder: (context, language, child) {
+              return OutlinedButton(
+                child: Text(S.of(context).languageChange),
+                onPressed: () {
+                  if (language.getLocale() == 'zh') {
+                    language.setLocale('en');
+                  } else {
+                    language.setLocale('zh');
+                  }
+                },
+              );
+            }),
           ],
         ),
       ),
