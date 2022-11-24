@@ -1,8 +1,11 @@
+import 'package:dio/dio.dart';
 import 'package:etherwallet/model/network_type.dart';
 import 'package:etherwallet/model/wallet.dart';
+import 'package:etherwallet/net/market_api.dart';
 import 'package:etherwallet/service/address_service.dart';
 import 'package:etherwallet/service/configuration_service.dart';
 import 'package:etherwallet/service/contract_locator.dart';
+import 'package:etherwallet/service/vision_repository.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:web3dart/web3dart.dart' as web3;
 
@@ -48,6 +51,10 @@ class WalletHandler {
     _store.dispatch(InitialiseWallet(network, address.toString(), privateKey));
 
     await refreshBalance();
+  }
+
+  Future fetchMarket() async {
+      return VisionRepo.fetchMarket();
   }
 
   Future<void> _initialiseFromPrivateKey(

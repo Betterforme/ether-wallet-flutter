@@ -1,0 +1,3 @@
+class SplashHandler{
+  SplashHandler();
+}

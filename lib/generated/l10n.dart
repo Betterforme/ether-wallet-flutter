@@ -79,6 +79,156 @@ class S {
       args: [],
     );
   }
+
+  /// `Ecological`
+  String get ecological {
+    return Intl.message(
+      'Ecological',
+      name: 'ecological',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `DOPS public chain, multi-ecological layout, diversified community`
+  String get ecological_desc {
+    return Intl.message(
+      'DOPS public chain, multi-ecological layout, diversified community',
+      name: 'ecological_desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Safe`
+  String get safe {
+    return Intl.message(
+      'Safe',
+      name: 'safe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Decentralized architecture, bottom layer protection, own private key`
+  String get safe_desc {
+    return Intl.message(
+      'Decentralized architecture, bottom layer protection, own private key',
+      name: 'safe_desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Across the chain`
+  String get mul_chain {
+    return Intl.message(
+      'Across the chain',
+      name: 'mul_chain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ETH and BSC multi-chain asset cross-chain, strong public chain support`
+  String get mul_chain_desc {
+    return Intl.message(
+      'ETH and BSC multi-chain asset cross-chain, strong public chain support',
+      name: 'mul_chain_desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Import Wallet`
+  String get import_wallet {
+    return Intl.message(
+      'Import Wallet',
+      name: 'import_wallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Setting the Name`
+  String get set_name {
+    return Intl.message(
+      'Setting the Name',
+      name: 'set_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The wallet name is used to help you distinguish between different wallets`
+  String get name_used_to {
+    return Intl.message(
+      'The wallet name is used to help you distinguish between different wallets',
+      name: 'name_used_to',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The value ranges from 1 to 14 characters`
+  String get char_number {
+    return Intl.message(
+      'The value ranges from 1 to 14 characters',
+      name: 'char_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Setting password`
+  String get set_pwd {
+    return Intl.message(
+      'Setting password',
+      name: 'set_pwd',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \n*Vtimes does not store the password, nor can it help you find, please remember.`
+  String get pwd_tips {
+    return Intl.message(
+      'Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \\n*Vtimes does not store the password, nor can it help you find, please remember.',
+      name: 'pwd_tips',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your password.`
+  String get input_pwd {
+    return Intl.message(
+      'Please enter your password.',
+      name: 'input_pwd',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To protect your assets, the password should consist of: \n1 uppercase letters \n1 lowercase letters \n1 numbers \n at least 8 characters`
+  String get pwd_format {
+    return Intl.message(
+      'To protect your assets, the password should consist of: \n1 uppercase letters \n1 lowercase letters \n1 numbers \n at least 8 characters',
+      name: 'pwd_format',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

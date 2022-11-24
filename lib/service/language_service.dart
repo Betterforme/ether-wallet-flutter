@@ -15,6 +15,6 @@ class LanguageService with ChangeNotifier {
   }
 
   String getLocale(){
-      return _sp.getString(_kLanguage) ?? 'en';
+      return _sp.getString(_kLanguage) ?? 'zh';
   }
 }

@@ -1,0 +1,3 @@
+class LaunchHandler{
+  LaunchHandler();
+}

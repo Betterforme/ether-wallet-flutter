@@ -22,10 +22,33 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "char_number": MessageLookupByLibrary.simpleMessage(
+            "The value ranges from 1 to 14 characters"),
         "createNWallet":
             MessageLookupByLibrary.simpleMessage("Create new wallet"),
+        "ecological": MessageLookupByLibrary.simpleMessage("Ecological"),
+        "ecological_desc": MessageLookupByLibrary.simpleMessage(
+            "DOPS public chain, multi-ecological layout, diversified community"),
+        "import_wallet": MessageLookupByLibrary.simpleMessage("Import Wallet"),
+        "input_pwd":
+            MessageLookupByLibrary.simpleMessage("Please enter your password."),
         "languageChange":
             MessageLookupByLibrary.simpleMessage("change language"),
+        "mul_chain": MessageLookupByLibrary.simpleMessage("Across the chain"),
+        "mul_chain_desc": MessageLookupByLibrary.simpleMessage(
+            "ETH and BSC multi-chain asset cross-chain, strong public chain support"),
+        "name_used_to": MessageLookupByLibrary.simpleMessage(
+            "The wallet name is used to help you distinguish between different wallets"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "pwd_format": MessageLookupByLibrary.simpleMessage(
+            "To protect your assets, the password should consist of: \n1 uppercase letters \n1 lowercase letters \n1 numbers \n at least 8 characters"),
+        "pwd_tips": MessageLookupByLibrary.simpleMessage(
+            "Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \\n*Vtimes does not store the password, nor can it help you find, please remember."),
+        "safe": MessageLookupByLibrary.simpleMessage("Safe"),
+        "safe_desc": MessageLookupByLibrary.simpleMessage(
+            "Decentralized architecture, bottom layer protection, own private key"),
+        "set_name": MessageLookupByLibrary.simpleMessage("Setting the Name"),
+        "set_pwd": MessageLookupByLibrary.simpleMessage("Setting password"),
         "test": MessageLookupByLibrary.simpleMessage("test")
       };
 }

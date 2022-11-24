@@ -22,7 +22,6 @@ class WalletProvider extends ContextProviderWidget<WalletHandler> {
       initialState: Wallet(),
       initialAction: WalletInit(),
     );
-
     final addressService = Provider.of<AddressService>(context);
     final contractServiceFactory = Provider.of<ContractLocator>(context);
     final configurationService = Provider.of<ConfigurationService>(context);
