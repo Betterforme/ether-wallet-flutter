@@ -1,9 +1,12 @@
+import 'package:etherwallet/model/wallet.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class IConfigurationService {
   Future<void> setMnemonic(String? value);
   Future<void> setupDone(bool value);
   Future<void> setPrivateKey(String? value);
+  Future<void> setWallet(Wallet value);
+
   String? getMnemonic();
   String? getPrivateKey();
   bool didSetupWallet();
@@ -44,4 +47,12 @@ class ConfigurationService implements IConfigurationService {
   bool didSetupWallet() {
     return _preferences.getBool('didSetupWallet') ?? false;
   }
+
+  @override
+  Future<void> setWallet(Wallet wallet) {
+    wallet.toBuilder().
+    throw UnimplementedError();
+  }
+
+
 }

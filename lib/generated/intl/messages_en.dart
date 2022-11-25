@@ -41,9 +41,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "The wallet name is used to help you distinguish between different wallets"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "pwd_format": MessageLookupByLibrary.simpleMessage(
-            "To protect your assets, the password should consist of: \n1 uppercase letters \n1 lowercase letters \n1 numbers \n at least 8 characters"),
+            "To protect your assets, the password should consist of: \\\n1 uppercase letters \\\n1 lowercase letters \\\n1 numbers \\\n at least 8 characters"),
         "pwd_tips": MessageLookupByLibrary.simpleMessage(
-            "Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \\n*Vtimes does not store the password, nor can it help you find, please remember."),
+            "Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \\\n*Vtimes does not store the password, nor can it help you find, please remember."),
+        "reset_pwd":
+            MessageLookupByLibrary.simpleMessage("Enter your password again"),
         "safe": MessageLookupByLibrary.simpleMessage("Safe"),
         "safe_desc": MessageLookupByLibrary.simpleMessage(
             "Decentralized architecture, bottom layer protection, own private key"),

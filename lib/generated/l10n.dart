@@ -200,10 +200,20 @@ class S {
     );
   }
 
-  /// `Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \n*Vtimes does not store the password, nor can it help you find, please remember.`
+  /// `Enter your password again`
+  String get reset_pwd {
+    return Intl.message(
+      'Enter your password again',
+      name: 'reset_pwd',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \\n*Vtimes does not store the password, nor can it help you find, please remember.`
   String get pwd_tips {
     return Intl.message(
-      'Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \\n*Vtimes does not store the password, nor can it help you find, please remember.',
+      'Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \\\n*Vtimes does not store the password, nor can it help you find, please remember.',
       name: 'pwd_tips',
       desc: '',
       args: [],
@@ -220,10 +230,10 @@ class S {
     );
   }
 
-  /// `To protect your assets, the password should consist of: \n1 uppercase letters \n1 lowercase letters \n1 numbers \n at least 8 characters`
+  /// `To protect your assets, the password should consist of: \\n1 uppercase letters \\n1 lowercase letters \\n1 numbers \\n at least 8 characters`
   String get pwd_format {
     return Intl.message(
-      'To protect your assets, the password should consist of: \n1 uppercase letters \n1 lowercase letters \n1 numbers \n at least 8 characters',
+      'To protect your assets, the password should consist of: \\\n1 uppercase letters \\\n1 lowercase letters \\\n1 numbers \\\n at least 8 characters',
       name: 'pwd_format',
       desc: '',
       args: [],

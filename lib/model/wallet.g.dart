@@ -8,11 +8,15 @@ part of 'wallet.dart';
 
 class _$Wallet extends Wallet {
   @override
-  final NetworkType network;
+  final NetworkType? network;
   @override
   final String? address;
   @override
   final String? privateKey;
+  @override
+  final String? mnemonic;
+  @override
+  final String name;
   @override
   final BigInt tokenBalance;
   @override
@@ -26,15 +30,17 @@ class _$Wallet extends Wallet {
       (new WalletBuilder()..update(updates))._build();
 
   _$Wallet._(
-      {required this.network,
+      {this.network,
       this.address,
       this.privateKey,
+      this.mnemonic,
+      required this.name,
       required this.tokenBalance,
       required this.ethBalance,
       required this.loading,
       this.errors})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(network, r'Wallet', 'network');
+    BuiltValueNullFieldError.checkNotNull(name, r'Wallet', 'name');
     BuiltValueNullFieldError.checkNotNull(
         tokenBalance, r'Wallet', 'tokenBalance');
     BuiltValueNullFieldError.checkNotNull(ethBalance, r'Wallet', 'ethBalance');
@@ -55,6 +61,8 @@ class _$Wallet extends Wallet {
         network == other.network &&
         address == other.address &&
         privateKey == other.privateKey &&
+        mnemonic == other.mnemonic &&
+        name == other.name &&
         tokenBalance == other.tokenBalance &&
         ethBalance == other.ethBalance &&
         loading == other.loading &&
@@ -67,8 +75,12 @@ class _$Wallet extends Wallet {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, network.hashCode), address.hashCode),
-                        privateKey.hashCode),
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, network.hashCode), address.hashCode),
+                                privateKey.hashCode),
+                            mnemonic.hashCode),
+                        name.hashCode),
                     tokenBalance.hashCode),
                 ethBalance.hashCode),
             loading.hashCode),
@@ -81,6 +93,8 @@ class _$Wallet extends Wallet {
           ..add('network', network)
           ..add('address', address)
           ..add('privateKey', privateKey)
+          ..add('mnemonic', mnemonic)
+          ..add('name', name)
           ..add('tokenBalance', tokenBalance)
           ..add('ethBalance', ethBalance)
           ..add('loading', loading)
@@ -103,6 +117,14 @@ class WalletBuilder implements Builder<Wallet, WalletBuilder> {
   String? _privateKey;
   String? get privateKey => _$this._privateKey;
   set privateKey(String? privateKey) => _$this._privateKey = privateKey;
+
+  String? _mnemonic;
+  String? get mnemonic => _$this._mnemonic;
+  set mnemonic(String? mnemonic) => _$this._mnemonic = mnemonic;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   BigInt? _tokenBalance;
   BigInt? get tokenBalance => _$this._tokenBalance;
@@ -129,6 +151,8 @@ class WalletBuilder implements Builder<Wallet, WalletBuilder> {
       _network = $v.network;
       _address = $v.address;
       _privateKey = $v.privateKey;
+      _mnemonic = $v.mnemonic;
+      _name = $v.name;
       _tokenBalance = $v.tokenBalance;
       _ethBalance = $v.ethBalance;
       _loading = $v.loading;
@@ -157,10 +181,12 @@ class WalletBuilder implements Builder<Wallet, WalletBuilder> {
     try {
       _$result = _$v ??
           new _$Wallet._(
-              network: BuiltValueNullFieldError.checkNotNull(
-                  network, r'Wallet', 'network'),
+              network: network,
               address: address,
               privateKey: privateKey,
+              mnemonic: mnemonic,
+              name: BuiltValueNullFieldError.checkNotNull(
+                  name, r'Wallet', 'name'),
               tokenBalance: BuiltValueNullFieldError.checkNotNull(
                   tokenBalance, r'Wallet', 'tokenBalance'),
               ethBalance: BuiltValueNullFieldError.checkNotNull(

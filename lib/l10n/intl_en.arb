@@ -15,7 +15,8 @@
   "char_number": "The value ranges from 1 to 14 characters",
   "next": "Next",
   "set_pwd": "Setting password",
-  "pwd_tips": "Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \\n*Vtimes does not store the password, nor can it help you find, please remember.",
+  "reset_pwd": "Enter your password again",
+  "pwd_tips": "Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \\\n*Vtimes does not store the password, nor can it help you find, please remember.",
   "input_pwd": "Please enter your password.",
-  "pwd_format": "To protect your assets, the password should consist of: \n1 uppercase letters \n1 lowercase letters \n1 numbers \n at least 8 characters"
+  "pwd_format": "To protect your assets, the password should consist of: \\\n1 uppercase letters \\\n1 lowercase letters \\\n1 numbers \\\n at least 8 characters"
 }

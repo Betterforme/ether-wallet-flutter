@@ -37,9 +37,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("钱包名称用于帮助您区分不同的钱包"),
         "next": MessageLookupByLibrary.simpleMessage("下一步"),
         "pwd_format": MessageLookupByLibrary.simpleMessage(
-            "为了保护您的资产，密码应包括：\n1个大写字母\n1个小写字母\n1个数字\n至少8个字符"),
+            "为了保护您的资产，密码应包括：\\\n1个大写字母\\\n1个小写字母\\\n1个数字\\\n至少8个字符"),
         "pwd_tips": MessageLookupByLibrary.simpleMessage(
-            "*密码用于加密保护私钥，转账等，所以强度非常重要。\\n*Vtimes不存储密码，也无法帮你找回，请务必牢记。"),
+            "*密码用于加密保护私钥，转账等，所以强度非常重要。\\\n*Vtimes不存储密码，也无法帮你找回，请务必牢记。"),
+        "reset_pwd": MessageLookupByLibrary.simpleMessage("再次输入密码"),
         "safe": MessageLookupByLibrary.simpleMessage("安全"),
         "safe_desc": MessageLookupByLibrary.simpleMessage("去中心化架构，底层加护，自有私钥"),
         "set_name": MessageLookupByLibrary.simpleMessage("设置名称"),

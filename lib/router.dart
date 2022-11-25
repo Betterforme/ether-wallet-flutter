@@ -46,7 +46,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
                 useEffect(() {
                   store.generateMnemonic();
                 }, []);
-                return const WalletCreatePage('Create wallet');
+                return WalletCreatePage('Create wallet');
               }));
     case '/import':
       return CupertinoPageRoute(
@@ -78,7 +78,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         useEffect(() {
           store.generateMnemonic();
         }, []);
-        return const WalletCreatePage('Create wallet');
+        return WalletCreatePage('Create wallet');
       }));
   }
 }
