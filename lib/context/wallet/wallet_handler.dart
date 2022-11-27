@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:etherwallet/model/local_wallet.dart';
 import 'package:etherwallet/model/network_type.dart';
 import 'package:etherwallet/model/wallet.dart';
 import 'package:etherwallet/net/market_api.dart';
@@ -52,6 +53,7 @@ class WalletHandler {
 
     await refreshBalance();
   }
+
 
   Future fetchMarket() async {
       return VisionRepo.fetchMarket();

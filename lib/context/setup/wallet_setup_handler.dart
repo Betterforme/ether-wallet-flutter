@@ -4,6 +4,7 @@ import 'package:etherwallet/model/wallet_setup.dart';
 import 'package:etherwallet/service/address_service.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
+import '../../model/local_wallet.dart';
 import 'wallet_setup_state.dart';
 
 class WalletSetupHandler {
@@ -14,9 +15,10 @@ class WalletSetupHandler {
 
   WalletSetup get state => _store.state;
 
-  void generateMnemonic() {
+  String generateMnemonic() {
     final mnemonic = _addressService.generateMnemonic();
     _store.dispatch(WalletSetupConfirmMnemonic(mnemonic));
+    return mnemonic;
   }
 
   Future<bool> confirmMnemonic(String mnemonic) async {
@@ -53,6 +55,13 @@ class WalletSetupHandler {
         WalletSetupAddError('Invalid mnemonic, it requires 12 words.'));
 
     return false;
+  }
+
+  Future<LocalWallet> generateWalletByMnemonic(
+      String mnemonic,String name,String password) async {
+    final privateKey = await _addressService.getPrivateKey(mnemonic);
+    final address = await _addressService.getPublicAddress(privateKey);
+    return LocalWallet(address: address.hexEip55, privateKey: privateKey, name: name, password: password);
   }
 
   Future<bool> importFromPrivateKey(String privateKey) async {

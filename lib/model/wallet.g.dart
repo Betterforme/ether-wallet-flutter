@@ -8,7 +8,7 @@ part of 'wallet.dart';
 
 class _$Wallet extends Wallet {
   @override
-  final NetworkType? network;
+  final NetworkType network;
   @override
   final String? address;
   @override
@@ -30,7 +30,7 @@ class _$Wallet extends Wallet {
       (new WalletBuilder()..update(updates))._build();
 
   _$Wallet._(
-      {this.network,
+      {required this.network,
       this.address,
       this.privateKey,
       this.mnemonic,
@@ -40,6 +40,7 @@ class _$Wallet extends Wallet {
       required this.loading,
       this.errors})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(network, r'Wallet', 'network');
     BuiltValueNullFieldError.checkNotNull(name, r'Wallet', 'name');
     BuiltValueNullFieldError.checkNotNull(
         tokenBalance, r'Wallet', 'tokenBalance');
@@ -181,7 +182,8 @@ class WalletBuilder implements Builder<Wallet, WalletBuilder> {
     try {
       _$result = _$v ??
           new _$Wallet._(
-              network: network,
+              network: BuiltValueNullFieldError.checkNotNull(
+                  network, r'Wallet', 'network'),
               address: address,
               privateKey: privateKey,
               mnemonic: mnemonic,

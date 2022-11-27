@@ -1,9 +1,11 @@
 import 'package:etherwallet/components/wallet/confirm_mnemonic.dart';
 import 'package:etherwallet/context/setup/wallet_setup_provider.dart';
+import 'package:etherwallet/model/local_wallet.dart';
 import 'package:etherwallet/model/wallet_setup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:web3dart/web3dart.dart';
 
 import 'components/CommonAppBar.dart';
 import 'components/TopSnackBar.dart';
@@ -131,7 +133,7 @@ class WalletCreatePage extends HookWidget {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(TopSnackBar(context, '密码长度小于8位'));
                           } else if (pwdControl.text == pwdAgainControl.text) {
-                            store.generateMnemonic();
+                            store.generateWalletByMnemonic(store.generateMnemonic(),nameControl.text,pwdAgainControl.text);
                             ScaffoldMessenger.of(context).showSnackBar(
                                 TopSnackBar(
                                     context, store.state.mnemonic ?? ''));

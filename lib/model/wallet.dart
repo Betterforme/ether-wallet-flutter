@@ -15,7 +15,7 @@ abstract class Wallet implements Built<Wallet, WalletBuilder> {
 
   Wallet._();
 
-  NetworkType? get network;
+  NetworkType get network;
 
   String? get address;
 
