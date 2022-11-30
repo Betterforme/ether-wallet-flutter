@@ -1,17 +1,21 @@
 import 'dart:async';
 
+import 'package:etherwallet/Constants.dart';
 import 'package:etherwallet/model/wallet_setup.dart';
 import 'package:etherwallet/service/address_service.dart';
+import 'package:etherwallet/service/configuration_service.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../model/local_wallet.dart';
 import 'wallet_setup_state.dart';
 
 class WalletSetupHandler {
-  WalletSetupHandler(this._store, this._addressService);
+  WalletSetupHandler(
+      this._store, this._addressService, this._configurationService);
 
   final Store<WalletSetup, WalletSetupAction> _store;
   final AddressService _addressService;
+  final ConfigurationService _configurationService;
 
   WalletSetup get state => _store.state;
 
@@ -58,10 +62,23 @@ class WalletSetupHandler {
   }
 
   Future<LocalWallet> generateWalletByMnemonic(
-      String mnemonic,String name,String password) async {
+      String mnemonic, String name, String password) async {
     final privateKey = await _addressService.getPrivateKey(mnemonic);
     final address = await _addressService.getPublicAddress(privateKey);
-    return LocalWallet(address: address.hexEip55, privateKey: privateKey, name: name, password: password);
+    return LocalWallet(
+        mnemonic: mnemonic,
+        address: address.hexEip55,
+        privateKey: privateKey,
+        name: name,
+        password: password);
+  }
+
+  Future<bool> saveWallet(LocalWallet wallet) async {
+    return _configurationService.setWallet(wallet);
+  }
+
+  List<LocalWallet> getWallet() {
+    return _configurationService.getLocalWalletList();
   }
 
   Future<bool> importFromPrivateKey(String privateKey) async {

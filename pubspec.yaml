@@ -57,6 +57,13 @@ dependencies:
   html_unescape: ^1.0.2
   flutter_screenutil: ^5.6.0
   smooth_page_indicator: ^1.0.0+2
+  base58check: ^2.0.0
+  fluttertoast: ^8.1.1
+  #AES RSA
+  encrypt: ^5.0.1
+  #sha hash
+  crypto: ^3.0.2
+  eip55: ^1.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

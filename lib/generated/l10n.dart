@@ -239,6 +239,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Backup mnemonics`
+  String get backup_mnemonic {
+    return Intl.message(
+      'Backup mnemonics',
+      name: 'backup_mnemonic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The following is the private key information of the wallet. Obtaining the private key is equivalent to owning the asset of the wallet. Please keep it safely, once it is lost, it will not be recovered`
+  String get backup_tips {
+    return Intl.message(
+      'The following is the private key information of the wallet. Obtaining the private key is equivalent to owning the asset of the wallet. Please keep it safely, once it is lost, it will not be recovered',
+      name: 'backup_tips',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I've backed it up safely`
+  String get already_backup {
+    return Intl.message(
+      'I\'ve backed it up safely',
+      name: 'already_backup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy mnemonic`
+  String get copy_mnemonic {
+    return Intl.message(
+      'Copy mnemonic',
+      name: 'copy_mnemonic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My`
+  String get my {
+    return Intl.message(
+      'My',
+      name: 'my',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Market`
+  String get market {
+    return Intl.message(
+      'Market',
+      name: 'market',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Assets`
+  String get assets {
+    return Intl.message(
+      'Assets',
+      name: 'assets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `DApp`
+  String get dapp {
+    return Intl.message(
+      'DApp',
+      name: 'dapp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Wallet`
+  String get add_wallet {
+    return Intl.message(
+      'Add Wallet',
+      name: 'add_wallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for the wallet name or public key address`
+  String get search_wallet {
+    return Intl.message(
+      'Search for the wallet name or public key address',
+      name: 'search_wallet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

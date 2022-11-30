@@ -7,13 +7,15 @@ class LocalWallet {
   final String address;
   final String privateKey;
   final String? mnemonic;
-  final String name;
+  String name;
   final String password;
+  bool? selected;
 
   LocalWallet({
     required this.address,
     required this.privateKey,
     this.mnemonic,
+    this.selected,
     required this.name,
     required this.password,
   });

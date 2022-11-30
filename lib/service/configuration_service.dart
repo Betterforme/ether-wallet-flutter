@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:etherwallet/model/local_wallet.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class IConfigurationService {
@@ -54,7 +55,7 @@ class ConfigurationService implements IConfigurationService {
 
   @override
   bool didSetupWallet() {
-    return _preferences.getBool('didSetupWallet') ?? false;
+    return getLocalWalletList().isNotEmpty ;
   }
 
   @override
@@ -64,13 +65,21 @@ class ConfigurationService implements IConfigurationService {
         _preferences.getStringList('localWallet');
 
     if (walletList.isNotEmpty && walletListJson != null) {
-      bool hasContain = false;
+      bool hasAddressContain = false;
+      bool hasNameContain = false;
       for (final element in walletList) {
         if (element.address == wallet.address) {
-          hasContain = true;
+          hasAddressContain = true;
+        }
+        if (element.name == wallet.name) {
+          hasNameContain = true;
         }
       }
-      if (hasContain) {
+      if (hasAddressContain) {
+        Fluttertoast.showToast(msg: 'Wallet has contain');
+        return false;
+      } else if (hasNameContain) {
+        Fluttertoast.showToast(msg: 'Wallet name has contain');
         return false;
       } else {
         walletListJson.add(const JsonEncoder().convert(wallet.toJson()));
@@ -83,7 +92,6 @@ class ConfigurationService implements IConfigurationService {
       _preferences.setStringList('localWallet', current);
       return true;
     }
-
   }
 
   @override

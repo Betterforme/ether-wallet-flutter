@@ -48,7 +48,6 @@ class ContractService implements IContractService {
         await event?.cancel();
       }, take: 1);
     }
-
     try {
       final transactionId = await client.sendTransaction(
         credentials,

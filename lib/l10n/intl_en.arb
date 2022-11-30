@@ -18,5 +18,16 @@
   "reset_pwd": "Enter your password again",
   "pwd_tips": "Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \\\n*Vtimes does not store the password, nor can it help you find, please remember.",
   "input_pwd": "Please enter your password.",
-  "pwd_format": "To protect your assets, the password should consist of: \\\n1 uppercase letters \\\n1 lowercase letters \\\n1 numbers \\\n at least 8 characters"
+  "pwd_format": "To protect your assets, the password should consist of: \\\n1 uppercase letters \\\n1 lowercase letters \\\n1 numbers \\\n at least 8 characters",
+  "backup_mnemonic": "Backup mnemonics",
+  "backup_tips": "The following is the private key information of the wallet. Obtaining the private key is equivalent to owning the asset of the wallet. Please keep it safely, once it is lost, it will not be recovered",
+  "already_backup": "I've backed it up safely",
+  "copy_mnemonic": "Copy mnemonic",
+  "my": "My",
+  "market": "Market",
+  "assets": "Assets",
+  "dapp": "DApp",
+  "add_wallet": "Add Wallet",
+  "search_wallet": "Search for the wallet name or public key address"
+
 }

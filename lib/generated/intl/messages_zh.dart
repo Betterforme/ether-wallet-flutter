@@ -22,17 +22,27 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_wallet": MessageLookupByLibrary.simpleMessage("添加钱包"),
+        "already_backup": MessageLookupByLibrary.simpleMessage("我已安全备份"),
+        "assets": MessageLookupByLibrary.simpleMessage("资产"),
+        "backup_mnemonic": MessageLookupByLibrary.simpleMessage("备份助记词"),
+        "backup_tips": MessageLookupByLibrary.simpleMessage(
+            "以下是钱包的私钥信息，获得私钥等于拥有钱包资产所有权，请安全保存，一旦丢失将无法找回"),
         "char_number": MessageLookupByLibrary.simpleMessage("1-14个字符"),
+        "copy_mnemonic": MessageLookupByLibrary.simpleMessage("复制助记词"),
         "createNWallet": MessageLookupByLibrary.simpleMessage("创建钱包"),
+        "dapp": MessageLookupByLibrary.simpleMessage("应用"),
         "ecological": MessageLookupByLibrary.simpleMessage("生态"),
         "ecological_desc":
             MessageLookupByLibrary.simpleMessage("DOPS公链，多生态布局，多元化社区"),
         "import_wallet": MessageLookupByLibrary.simpleMessage("导入钱包"),
         "input_pwd": MessageLookupByLibrary.simpleMessage("请输入密码"),
         "languageChange": MessageLookupByLibrary.simpleMessage("语言切换"),
+        "market": MessageLookupByLibrary.simpleMessage("行情"),
         "mul_chain": MessageLookupByLibrary.simpleMessage("跨链"),
         "mul_chain_desc":
             MessageLookupByLibrary.simpleMessage("ETH、BSC多链资产跨链，强大的公链支持"),
+        "my": MessageLookupByLibrary.simpleMessage("我的"),
         "name_used_to":
             MessageLookupByLibrary.simpleMessage("钱包名称用于帮助您区分不同的钱包"),
         "next": MessageLookupByLibrary.simpleMessage("下一步"),
@@ -43,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "reset_pwd": MessageLookupByLibrary.simpleMessage("再次输入密码"),
         "safe": MessageLookupByLibrary.simpleMessage("安全"),
         "safe_desc": MessageLookupByLibrary.simpleMessage("去中心化架构，底层加护，自有私钥"),
+        "search_wallet": MessageLookupByLibrary.simpleMessage("搜索钱包名或公钥地址"),
         "set_name": MessageLookupByLibrary.simpleMessage("设置名称"),
         "set_pwd": MessageLookupByLibrary.simpleMessage("设置密码"),
         "test": MessageLookupByLibrary.simpleMessage("测试")

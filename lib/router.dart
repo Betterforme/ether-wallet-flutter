@@ -1,12 +1,16 @@
 import 'package:etherwallet/context/Launch/launch_provider.dart';
+import 'package:etherwallet/context/main/splash_provider.dart';
 import 'package:etherwallet/context/splash/splash_provider.dart';
+import 'package:etherwallet/model/local_wallet.dart';
 import 'package:etherwallet/model/network_type.dart';
+import 'package:etherwallet/page/backup_mnemoinc_page.dart';
+import 'package:etherwallet/page/main_page.dart';
 import 'package:etherwallet/page_route_anim.dart';
 import 'package:etherwallet/qrcode_reader_page.dart';
 import 'package:etherwallet/service/configuration_service.dart';
 import 'package:etherwallet/splash_page.dart';
 import 'package:etherwallet/utils/route_utils.dart';
-import 'package:etherwallet/wallet_create_page.dart';
+import 'package:etherwallet/page/wallet_create_page.dart';
 import 'package:etherwallet/wallet_import_page.dart';
 import 'package:etherwallet/wallet_main_page.dart';
 import 'package:etherwallet/wallet_transfer_page.dart';
@@ -33,8 +37,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       final configurationService = Provider.of<ConfigurationService>(_context);
       if (configurationService.didSetupWallet())
         return CupertinoPageRoute(
-            builder: (_) => WalletProvider(
-                builder: (context, store) => const WalletMainPage('Your wallet')));
+            builder: (_) => WalletSetupProvider(
+                builder: (context, store) => MainPage()));
 
       return CupertinoPageRoute(
           builder: (_) => LaunchProvider(
@@ -48,6 +52,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
                 }, []);
                 return WalletCreatePage('Create wallet');
               }));
+    case '/backup':
+      return CupertinoPageRoute(
+          builder: (_) => WalletSetupProvider(builder: (context, store) {
+            return BackupMnemonicPage(settings.arguments as LocalWallet);
+          }));
     case '/import':
       return CupertinoPageRoute(
           builder: (_) => WalletSetupProvider(
@@ -72,6 +81,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           builder: (_) => LaunchProvider(
                 builder: (context, store) => SplashPage(),
               ));
+    case '/main':
+      return CupertinoPageRoute(
+          builder: (_) => MainProvider(
+            builder: (context, store) => MainPage(),
+          ));
     default:
       return SlideTopRouteBuilder(
           WalletSetupProvider(builder: (context, store) {

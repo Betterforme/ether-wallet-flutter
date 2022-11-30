@@ -22,10 +22,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_wallet": MessageLookupByLibrary.simpleMessage("Add Wallet"),
+        "already_backup":
+            MessageLookupByLibrary.simpleMessage("I\'ve backed it up safely"),
+        "assets": MessageLookupByLibrary.simpleMessage("Assets"),
+        "backup_mnemonic":
+            MessageLookupByLibrary.simpleMessage("Backup mnemonics"),
+        "backup_tips": MessageLookupByLibrary.simpleMessage(
+            "The following is the private key information of the wallet. Obtaining the private key is equivalent to owning the asset of the wallet. Please keep it safely, once it is lost, it will not be recovered"),
         "char_number": MessageLookupByLibrary.simpleMessage(
             "The value ranges from 1 to 14 characters"),
+        "copy_mnemonic": MessageLookupByLibrary.simpleMessage("Copy mnemonic"),
         "createNWallet":
             MessageLookupByLibrary.simpleMessage("Create new wallet"),
+        "dapp": MessageLookupByLibrary.simpleMessage("DApp"),
         "ecological": MessageLookupByLibrary.simpleMessage("Ecological"),
         "ecological_desc": MessageLookupByLibrary.simpleMessage(
             "DOPS public chain, multi-ecological layout, diversified community"),
@@ -34,9 +44,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please enter your password."),
         "languageChange":
             MessageLookupByLibrary.simpleMessage("change language"),
+        "market": MessageLookupByLibrary.simpleMessage("Market"),
         "mul_chain": MessageLookupByLibrary.simpleMessage("Across the chain"),
         "mul_chain_desc": MessageLookupByLibrary.simpleMessage(
             "ETH and BSC multi-chain asset cross-chain, strong public chain support"),
+        "my": MessageLookupByLibrary.simpleMessage("My"),
         "name_used_to": MessageLookupByLibrary.simpleMessage(
             "The wallet name is used to help you distinguish between different wallets"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
@@ -49,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "safe": MessageLookupByLibrary.simpleMessage("Safe"),
         "safe_desc": MessageLookupByLibrary.simpleMessage(
             "Decentralized architecture, bottom layer protection, own private key"),
+        "search_wallet": MessageLookupByLibrary.simpleMessage(
+            "Search for the wallet name or public key address"),
         "set_name": MessageLookupByLibrary.simpleMessage("Setting the Name"),
         "set_pwd": MessageLookupByLibrary.simpleMessage("Setting password"),
         "test": MessageLookupByLibrary.simpleMessage("test")

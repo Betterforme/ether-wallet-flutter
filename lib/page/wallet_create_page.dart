@@ -7,10 +7,10 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:web3dart/web3dart.dart';
 
-import 'components/CommonAppBar.dart';
-import 'components/TopSnackBar.dart';
-import 'components/wallet/display_mnemonic.dart';
-import 'generated/l10n.dart';
+import '../components/CommonAppBar.dart';
+import '../components/TopSnackBar.dart';
+import '../components/wallet/display_mnemonic.dart';
+import '../generated/l10n.dart';
 
 class WalletCreatePage extends HookWidget {
   WalletCreatePage(this.title, {Key? key}) : super(key: key);
@@ -28,7 +28,9 @@ class WalletCreatePage extends HookWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: CommonAppBar(context, S.of(context).createNWallet),
+      appBar: CommonAppBar(context, S
+          .of(context)
+          .createNWallet),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(0.0),
         child: Container(
@@ -36,14 +38,18 @@ class WalletCreatePage extends HookWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(S.of(context).set_name,
+              Text(S
+                  .of(context)
+                  .set_name,
                   style: TextStyle(
                       fontSize: 18.sp,
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center),
               SizedBox(width: 0, height: 10.w),
-              Text(S.of(context).name_used_to,
+              Text(S
+                  .of(context)
+                  .name_used_to,
                   style: TextStyle(
                       fontSize: 14.sp, color: const Color(0xffB8BDC8))),
               SizedBox(width: 0, height: 20.w),
@@ -55,7 +61,9 @@ class WalletCreatePage extends HookWidget {
                 },
                 decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: S.of(context).char_number,
+                    hintText: S
+                        .of(context)
+                        .char_number,
                     hintStyle: TextStyle(
                         color: const Color(0xffB8BDC8), fontSize: 18.sp),
                     counterText: ''),
@@ -63,19 +71,26 @@ class WalletCreatePage extends HookWidget {
                 cursorHeight: 19.w,
               ),
               Container(
-                width: MediaQuery.of(context).size.width,
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width,
                 height: 1,
                 color: const Color(0xffF2F2F2),
               ),
               SizedBox(width: 0, height: 20.w),
-              Text(S.of(context).set_pwd,
+              Text(S
+                  .of(context)
+                  .set_pwd,
                   style: TextStyle(
                       fontSize: 18.sp,
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center),
               SizedBox(width: 0, height: 10.w),
-              Text(S.of(context).pwd_tips,
+              Text(S
+                  .of(context)
+                  .pwd_tips,
                   style: TextStyle(
                       fontSize: 14.sp, color: const Color(0xffB8BDC8))),
               SizedBox(width: 0, height: 20.w),
@@ -88,7 +103,9 @@ class WalletCreatePage extends HookWidget {
                 },
                 decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: S.of(context).set_pwd,
+                    hintText: S
+                        .of(context)
+                        .set_pwd,
                     hintStyle: TextStyle(
                         color: const Color(0xffB8BDC8), fontSize: 18.sp),
                     counterText: ''),
@@ -96,7 +113,10 @@ class WalletCreatePage extends HookWidget {
                 cursorHeight: 19.w,
               ),
               Container(
-                width: MediaQuery.of(context).size.width,
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width,
                 height: 1,
                 color: const Color(0xffF2F2F2),
               ),
@@ -110,7 +130,9 @@ class WalletCreatePage extends HookWidget {
                 },
                 decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: S.of(context).reset_pwd,
+                    hintText: S
+                        .of(context)
+                        .reset_pwd,
                     hintStyle: TextStyle(
                         color: const Color(0xffB8BDC8), fontSize: 18.sp),
                     counterText: ''),
@@ -118,33 +140,42 @@ class WalletCreatePage extends HookWidget {
                 cursorHeight: 19.w,
               ),
               Container(
-                width: MediaQuery.of(context).size.width,
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width,
                 height: 1,
                 color: const Color(0xffF2F2F2),
               ),
               SizedBox(width: 0.w, height: 56.w),
               SizedBox(
-                width: MediaQuery.of(context).size.width,
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width,
                 height: 44.h,
                 child: TextButton(
                   onPressed: nextState.value
                       ? () {
-                          if (pwdControl.text.length < 8) {
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(TopSnackBar(context, '密码长度小于8位'));
-                          } else if (pwdControl.text == pwdAgainControl.text) {
-                            store.generateWalletByMnemonic(store.generateMnemonic(),nameControl.text,pwdAgainControl.text);
-                            ScaffoldMessenger.of(context).showSnackBar(
-                                TopSnackBar(
-                                    context, store.state.mnemonic ?? ''));
-                          } else {
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(TopSnackBar(context, '两次密码不一致'));
-                          }
-                        }
+                    if (pwdControl.text.isEmpty) {
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(TopSnackBar(context, '密码长度小于8位'));
+                    } else if (pwdControl.text == pwdAgainControl.text) {
+                      store.generateWalletByMnemonic(
+                          store.generateMnemonic(), nameControl.text,
+                          pwdAgainControl.text).then((value) =>
+                          Navigator.of(context).pushNamed('/backup',arguments: value)
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(TopSnackBar(context, '两次密码不一致'));
+                    }
+                  }
                       : null,
                   child: Text(
-                    S.of(context).next,
+                    S
+                        .of(context)
+                        .next,
                     style: TextStyle(color: Colors.white, fontSize: 18.sp),
                   ),
                   style: ButtonStyle(
@@ -154,7 +185,7 @@ class WalletCreatePage extends HookWidget {
                       shape: const MaterialStatePropertyAll(
                           RoundedRectangleBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(30))))),
+                              BorderRadius.all(Radius.circular(30))))),
                 ),
               ),
             ],
