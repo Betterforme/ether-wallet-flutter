@@ -43,7 +43,7 @@ void main() {
     // List<int> checksum = _hash(hexToBytes('0x46c26b24cfdf845b198207c3d2202cb0a7799c1690'));
     // bytes.setRange(bytes.length - 4, bytes.length, checksum.getRange(0, 4));
     // print(Base58Encoder(VISION_ALPHABET).convert(bytes));
-    print("0x46c26b24cfdf845b198207c3d2202cb0a7799c1690".toTronAddress());
-    print("VUPDNJGbczJ6oBZN5wrBPnjCbeYS82UpSW".toEthAddress());
+    print("0x5994a466146F4FDc7B7CAC9b93fA12c3238cc581".toTronAddress());
+    print("VJpt8WosnPBsEze2kRKfpXeAFnFMy2iQ7R".toEthAddress());
   });
 }

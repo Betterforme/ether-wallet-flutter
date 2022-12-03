@@ -55,7 +55,11 @@ class ConfigurationService implements IConfigurationService {
 
   @override
   bool didSetupWallet() {
-    return getLocalWalletList().isNotEmpty ;
+    final wallet = getLocalWalletList();
+    if (wallet.isNotEmpty) {
+      currentWallet = getCurrentWallet();
+    }
+    return wallet.isNotEmpty;
   }
 
   @override
@@ -108,4 +112,33 @@ class ConfigurationService implements IConfigurationService {
     }
     return walletList;
   }
+
+  LocalWallet getCurrentWallet() {
+    late LocalWallet wallet;
+    for (final element in getLocalWalletList()) {
+      if (element.selected == true) {
+        wallet = element;
+        break;
+      }
+    }
+    return wallet;
+  }
+
+  void setCurrentWallet(LocalWallet wallet) {
+    wallet.selected = true;
+    currentWallet = wallet;
+    final List<LocalWallet> wallets = getLocalWalletList();
+    for (final element in wallets) {
+      if (element.privateKey.toLowerCase() == wallet.privateKey.toLowerCase()) {
+        element.selected = true;
+      } else {
+        element.selected = false;
+      }
+    }
+    final walletJsonList =
+        wallets.map((e) => const JsonEncoder().convert(e.toJson())).toList();
+    _preferences.setStringList('localWallet', walletJsonList);
+  }
 }
+
+late LocalWallet currentWallet;

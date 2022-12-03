@@ -27,5 +27,8 @@
   "assets": "资产",
   "dapp": "应用",
   "add_wallet": "添加钱包",
-  "search_wallet": "搜索钱包名或公钥地址"
+  "search_wallet": "搜索钱包名或公钥地址",
+  "vote_manager": "投票/自治",
+  "quantum": "光量子",
+  "entropy": "熵"
 }

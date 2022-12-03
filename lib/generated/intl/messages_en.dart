@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ecological": MessageLookupByLibrary.simpleMessage("Ecological"),
         "ecological_desc": MessageLookupByLibrary.simpleMessage(
             "DOPS public chain, multi-ecological layout, diversified community"),
+        "entropy": MessageLookupByLibrary.simpleMessage("Entropy"),
         "import_wallet": MessageLookupByLibrary.simpleMessage("Import Wallet"),
         "input_pwd":
             MessageLookupByLibrary.simpleMessage("Please enter your password."),
@@ -56,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "To protect your assets, the password should consist of: \\\n1 uppercase letters \\\n1 lowercase letters \\\n1 numbers \\\n at least 8 characters"),
         "pwd_tips": MessageLookupByLibrary.simpleMessage(
             "Passwords are used to encrypt private keys, transfer money, etc., so strength is important. \\\n*Vtimes does not store the password, nor can it help you find, please remember."),
+        "quantum": MessageLookupByLibrary.simpleMessage("Quantum"),
         "reset_pwd":
             MessageLookupByLibrary.simpleMessage("Enter your password again"),
         "safe": MessageLookupByLibrary.simpleMessage("Safe"),
@@ -65,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Search for the wallet name or public key address"),
         "set_name": MessageLookupByLibrary.simpleMessage("Setting the Name"),
         "set_pwd": MessageLookupByLibrary.simpleMessage("Setting password"),
-        "test": MessageLookupByLibrary.simpleMessage("test")
+        "test": MessageLookupByLibrary.simpleMessage("test"),
+        "vote_manager": MessageLookupByLibrary.simpleMessage("Vote/Manager")
       };
 }

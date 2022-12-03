@@ -6,7 +6,6 @@ class MyPage extends HookWidget{
   @override
   Widget build(BuildContext context) {
     useAutomaticKeepAlive();
-    print('build my');
     return Container(
       alignment: Alignment.center,
       child: const Text('MyPage'),

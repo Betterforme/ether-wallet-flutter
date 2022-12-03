@@ -28,6 +28,8 @@
   "assets": "Assets",
   "dapp": "DApp",
   "add_wallet": "Add Wallet",
-  "search_wallet": "Search for the wallet name or public key address"
-
+  "search_wallet": "Search for the wallet name or public key address",
+  "vote_manager": "Vote/Manager",
+  "quantum": "Quantum",
+  "entropy": "Entropy"
 }

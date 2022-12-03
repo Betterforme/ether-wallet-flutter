@@ -1,4 +1,5 @@
 import 'package:etherwallet/ext/String.dart';
+import 'package:etherwallet/page/main_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -104,8 +105,12 @@ class DrawerPage extends HookWidget {
                       final filterWallet = handler
                           .getWallet()
                           .where((element) =>
-                              element.name.toLowerCase().contains(text.toLowerCase()) ||
-                              element.address.toLowerCase().contains(text.toLowerCase()))
+                              element.name
+                                  .toLowerCase()
+                                  .contains(text.toLowerCase()) ||
+                              element.address
+                                  .toLowerCase()
+                                  .contains(text.toLowerCase()))
                           .toList();
 
                       wallets.value = filterWallet;
@@ -135,66 +140,67 @@ class DrawerPage extends HookWidget {
               child: MediaQuery.removePadding(
             context: context,
             removeTop: true,
-            child: GestureDetector(
-              child: ListView.builder(
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: EdgeInsets.fromLTRB(16.w, 12.w, 16.w, 0),
-                      decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [Color(0xff474C58), Color(0xff222733)]),
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.all(Radius.circular(12.w))),
-                      height: 80.w,
-                      padding: EdgeInsets.fromLTRB(16.w, 16.w, 16.w, 0),
-                      child: Stack(
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                wallets.value[index].name,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: 5.w),
-                              Text(
-                                wallets.value[index].address
-                                    .toTronAddress()
-                                    .shortAddress(),
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 14.sp),
-                              )
-                            ],
-                          ),
-                          Positioned(
-                            child: wallets.value[index].selected == true
-                                ? Image.asset(
-                                    ImageHelper.wrapAssetsPng('item_select_yes'),
-                                    width: 18.w,
-                                    height: 18.w,
-                                  )
-                                : Image.asset(
-                                    ImageHelper.wrapAssetsPng('item_select_no'),
-                                    width: 18.w,
-                                    height: 18.w,
-                                  ),
-                            right: 6.w,
-                            top: 10.w,
-                          )
-                        ],
-                      ),
-                    );
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(16.w, 12.w, 16.w, 0),
+                    decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [Color(0xff474C58), Color(0xff222733)]),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.all(Radius.circular(12.w))),
+                    height: 80.w,
+                    padding: EdgeInsets.fromLTRB(16.w, 16.w, 16.w, 0),
+                    child: Stack(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              wallets.value[index].name,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18.sp,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 5.w),
+                            Text(
+                              wallets.value[index].address
+                                  .toTronAddress()
+                                  .shortAddress(),
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 14.sp),
+                            )
+                          ],
+                        ),
+                        Positioned(
+                          child: wallets.value[index].selected == true
+                              ? Image.asset(
+                                  ImageHelper.wrapAssetsPng('item_select_yes'),
+                                  width: 18.w,
+                                  height: 18.w,
+                                )
+                              : Image.asset(
+                                  ImageHelper.wrapAssetsPng('item_select_no'),
+                                  width: 18.w,
+                                  height: 18.w,
+                                ),
+                          right: 6.w,
+                          top: 10.w,
+                        )
+                      ],
+                    ),
+                  ),
+                  onTap: () {
+                    mainHandler.setCurrentWallet(wallets.value[index]);
+                    Scaffold.of(context).closeDrawer();
                   },
-                  itemCount: wallets.value.length,
-              ),
-              onTap: (){
-                Scaffold.of(context).closeDrawer();
+                );
               },
+              itemCount: wallets.value.length,
             ),
           ))
         ],

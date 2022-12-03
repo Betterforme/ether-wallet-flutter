@@ -4,13 +4,23 @@ import 'package:base58check/base58.dart';
 import 'package:collection/collection.dart' show ListEquality;
 import 'package:crypto/crypto.dart';
 import 'package:eip55/eip55.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:web3dart/crypto.dart';
 
 import '../Constants.dart';
+import '../components/TopSnackBar.dart';
 
 extension StringExtension on String {
   String toTronAddress() {
-    final payload = hexToBytes(this);
+    late String encodeStr;
+    if (startsWith('0x')) {
+      encodeStr = replaceFirst('0x', '0x46');
+    } else {
+      encodeStr = '0x' + this;
+    }
+    final payload = hexToBytes(encodeStr);
     final Uint8List bytes = Uint8List(payload.length + 4);
     bytes.setRange(0, bytes.length - 4, payload);
     final List<int> checksum =
@@ -46,5 +56,11 @@ extension StringExtension on String {
 
   String shortAddress() {
     return substring(0, 10) + '...' + substring(length - 10, length);
+  }
+
+  void copy(BuildContext context) {
+    Clipboard.setData(ClipboardData(text: this));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(TopSnackBar(context, 'Copy success'));
   }
 }

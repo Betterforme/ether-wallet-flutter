@@ -40,7 +40,7 @@ class MainApp extends StatelessWidget {
               builder: (context, languageService, child) {
                 initContext(context);
                 return MaterialApp(
-                  title: 'Flutter App',
+                  title: 'Vtimes',
                   initialRoute: '/',
                   navigatorObservers: [observer],
                   onGenerateRoute: generateRoute,
@@ -54,10 +54,9 @@ class MainApp extends StatelessWidget {
                   locale: Locale(languageService.getLocale()),
                   theme: ThemeData(
                     backgroundColor: Colors.white,
-                    primarySwatch: Colors.blue,
                     primaryColor: Colors.white,
                     buttonTheme: const ButtonThemeData(
-                      buttonColor: Colors.blue,
+                      buttonColor: Colors.white,
                       textTheme: ButtonTextTheme.primary,
                     ),
                   ),

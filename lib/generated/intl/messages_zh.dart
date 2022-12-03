@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ecological": MessageLookupByLibrary.simpleMessage("生态"),
         "ecological_desc":
             MessageLookupByLibrary.simpleMessage("DOPS公链，多生态布局，多元化社区"),
+        "entropy": MessageLookupByLibrary.simpleMessage("熵"),
         "import_wallet": MessageLookupByLibrary.simpleMessage("导入钱包"),
         "input_pwd": MessageLookupByLibrary.simpleMessage("请输入密码"),
         "languageChange": MessageLookupByLibrary.simpleMessage("语言切换"),
@@ -50,12 +51,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "为了保护您的资产，密码应包括：\\\n1个大写字母\\\n1个小写字母\\\n1个数字\\\n至少8个字符"),
         "pwd_tips": MessageLookupByLibrary.simpleMessage(
             "*密码用于加密保护私钥，转账等，所以强度非常重要。\\\n*Vtimes不存储密码，也无法帮你找回，请务必牢记。"),
+        "quantum": MessageLookupByLibrary.simpleMessage("光量子"),
         "reset_pwd": MessageLookupByLibrary.simpleMessage("再次输入密码"),
         "safe": MessageLookupByLibrary.simpleMessage("安全"),
         "safe_desc": MessageLookupByLibrary.simpleMessage("去中心化架构，底层加护，自有私钥"),
         "search_wallet": MessageLookupByLibrary.simpleMessage("搜索钱包名或公钥地址"),
         "set_name": MessageLookupByLibrary.simpleMessage("设置名称"),
         "set_pwd": MessageLookupByLibrary.simpleMessage("设置密码"),
-        "test": MessageLookupByLibrary.simpleMessage("测试")
+        "test": MessageLookupByLibrary.simpleMessage("测试"),
+        "vote_manager": MessageLookupByLibrary.simpleMessage("投票/自治")
       };
 }

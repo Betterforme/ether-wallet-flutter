@@ -339,6 +339,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Vote/Manager`
+  String get vote_manager {
+    return Intl.message(
+      'Vote/Manager',
+      name: 'vote_manager',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quantum`
+  String get quantum {
+    return Intl.message(
+      'Quantum',
+      name: 'quantum',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Entropy`
+  String get entropy {
+    return Intl.message(
+      'Entropy',
+      name: 'entropy',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -81,6 +81,10 @@ class WalletSetupHandler {
     return _configurationService.getLocalWalletList();
   }
 
+  void setCurrentWallet(LocalWallet wallet) {
+    _configurationService.setCurrentWallet(wallet);
+  }
+
   Future<bool> importFromPrivateKey(String privateKey) async {
     try {
       _store.dispatch(WalletSetupStarted());

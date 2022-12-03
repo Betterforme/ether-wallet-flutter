@@ -1,3 +1,4 @@
+import 'package:etherwallet/context/setup/wallet_setup_handler.dart';
 import 'package:etherwallet/context/setup/wallet_setup_provider.dart';
 import 'package:etherwallet/page/assets_page.dart';
 import 'package:etherwallet/page/dapp_page.dart';
@@ -12,6 +13,8 @@ import '../components/BottomNavigationBar.dart';
 import '../generated/l10n.dart';
 import 'drawer_page.dart';
 
+late WalletSetupHandler mainHandler;
+
 class MainPage extends HookWidget {
   MainPage({super.key});
 
@@ -23,6 +26,7 @@ class MainPage extends HookWidget {
     final selectIndex = useState(0);
     final pageControl = usePageController();
     final store = useWalletSetup(context);
+    mainHandler = store;
     final pages = [
       Builder(
           builder: (context) => AssetsPage(callbackAction: () {
